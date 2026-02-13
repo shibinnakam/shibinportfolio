@@ -11,10 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="1000">
         <div class="logo">Shibin Saji</div>
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
@@ -30,7 +32,7 @@
     </nav>
 
     <header id="home" class="hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-right">
             <h3 class="hello">Hello <span class="dot">.</span></h3>
             <div class="intro-line"></div>
             <h1>I'm Shibin</h1>
@@ -40,7 +42,7 @@
                 <a href="#resume" class="btn btn-outline">My resume</a>
             </div>
         </div>
-        <div class="hero-image-container">
+        <div class="hero-image-container" data-aos="fade-left">
             <div class="circle-bg"></div>
             <img src="https://placehold.co/400x400/161b22/ff6b4a?text=Shibin+Saji" alt="Shibin Saji"
                 class="profile-img">
@@ -50,48 +52,48 @@
         </div>
     </header>
 
-    <section class="tech-stack">
-        <div class="tech-item">HTML5</div>
-        <div class="tech-item">CSS</div>
-        <div class="tech-item">Javascript</div>
-        <div class="tech-item">NodeJS</div>
-        <div class="tech-item">React</div>
-        <div class="tech-item">Git</div>
-        <div class="tech-item">Github</div>
+    <section class="tech-stack" data-aos="fade-up">
+        <div class="tech-item" data-aos="zoom-in" data-aos-delay="100">HTML5</div>
+        <div class="tech-item" data-aos="zoom-in" data-aos-delay="200">CSS</div>
+        <div class="tech-item" data-aos="zoom-in" data-aos-delay="300">Javascript</div>
+        <div class="tech-item" data-aos="zoom-in" data-aos-delay="400">NodeJS</div>
+        <div class="tech-item" data-aos="zoom-in" data-aos-delay="500">React</div>
+        <div class="tech-item" data-aos="zoom-in" data-aos-delay="600">Git</div>
+        <div class="tech-item" data-aos="zoom-in" data-aos-delay="700">Github</div>
     </section>
 
     <section id="about" class="services-about">
         <div class="services">
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="icon"><i class="fas fa-desktop"></i></div>
                 <h4>Website Development</h4>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon"><i class="fas fa-mobile-alt"></i></div>
                 <h4>App Development</h4>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon"><i class="fas fa-cloud"></i></div>
                 <h4>Website Hosting</h4>
             </div>
         </div>
 
-        <div class="about-me">
+        <div class="about-me" data-aos="fade-left">
             <h3>About me</h3>
             <p>I started my software journey from photography. Through that, I learned to love the process of creating
                 from scratch. Since then, this has led me to software development as it fulfills my love for learning
                 and building things.</p>
 
             <div class="stats">
-                <div class="stat-item">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
                     <span class="number">120 +</span>
                     <span class="label">Completed Projects</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
                     <span class="number">95 %</span>
                     <span class="label">Client satisfaction</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
                     <span class="number">10 +</span>
                     <span class="label">Years of experience</span>
                 </div>
@@ -100,10 +102,10 @@
     </section>
 
     <section id="projects" class="projects-section">
-        <h3 class="section-title">Projects</h3>
+        <h3 class="section-title" data-aos="fade-down">Projects</h3>
         <div class="projects-grid">
             <!-- Project 1 -->
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="project-image">
                     <!-- Placeholder for VETOA image -->
                     <img src="images/vetoa-project.png" alt="VETOA Kozhikode">
@@ -124,7 +126,7 @@
                 </div>
             </div>
             <!-- Project 2 -->
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-image">
                     <img src="images/cochin-project.png" alt="Cochin Distributors">
                 </div>
@@ -144,7 +146,7 @@
                 </div>
             </div>
             <!-- Project 3 -->
-            <div class="project-card">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="project-image">
                     <img src="https://placehold.co/600x400/161b22/ff6b4a?text=Project+3" alt="Project 3">
                 </div>
@@ -167,9 +169,9 @@
     </section>
 
     <section id="contacts" class="contact-section">
-        <h3 class="section-title">Get In Touch</h3>
+        <h3 class="section-title" data-aos="fade-down">Get In Touch</h3>
         <div class="contact-container">
-            <div class="contact-info">
+            <div class="contact-info" data-aos="fade-right">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <div class="details">
@@ -198,7 +200,8 @@
                     <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mdkzgbyv" method="POST">
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mdkzgbyv" method="POST"
+                data-aos="fade-left">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
@@ -218,6 +221,8 @@
         </div>
     </section>
 
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
 </body>
 
