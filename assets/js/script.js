@@ -132,10 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-
-            // Animate hamburger lines
-            const bars = document.querySelectorAll('.bar');
-            // This is a simple toggle, for full X animation we'd need more CSS
+            hamburger.classList.toggle('active');
         });
     }
 
@@ -156,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Close mobile menu if open
                 if (navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
                 }
             }
         });
