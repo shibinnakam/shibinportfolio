@@ -56,10 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }).then(response => {
                 if (response.ok) {
-                    status.innerHTML = "Thanks for your submission!";
+                    status.innerHTML = "✅ Message sent successfully!";
                     status.style.display = 'block';
                     status.style.color = '#4ade80'; // Success green
                     form.reset();
+                    setTimeout(() => {
+                        window.location.href = "index.html#home";
+                    }, 2000);
                 } else {
                     response.json().then(data => {
                         if (Object.hasOwn(data, 'errors')) {
