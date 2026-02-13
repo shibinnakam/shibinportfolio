@@ -32,22 +32,22 @@
     </nav>
 
     <header id="home" class="hero">
-        <div class="hero-content" data-aos="fade-right">
-            <h3 class="hello">Hello <span class="dot">.</span></h3>
-            <div class="intro-line"></div>
-            <h1>I'm Shibin</h1>
-            <h2 class="role">Software Developer</h2>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">Get a project?</a>
-                <a href="#resume" class="btn btn-outline">My resume</a>
+        <div id="particles-js"></div>
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right">
+                <h3 class="hello-label">HELLO!</h3>
+                <h1 class="hero-title">I Am Shibin Saji<span class="cursor">|</span></h1>
+                <p class="hero-description">I'm a Web Developer with extensive experience for over 5 years. My expertise
+                    is to create and Websites design, graphic design and many more...</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                    <a href="#contacts" class="btn btn-primary">Hire Me</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image-container" data-aos="fade-left">
-            <div class="circle-bg"></div>
-            <img src="images/profile-source.png" alt="Shibin Saji" class="profile-img">
-            <!-- Decorative arrows -->
-            <div class="arrow arrow-top-left">&lt;</div>
-            <div class="arrow arrow-bottom-right">&gt;</div>
+            <div class="hero-image-container" data-aos="fade-left">
+                <!-- Removed circle-bg to match reference style more closely or keep it subtle -->
+                <img src="images/profile-source.png" alt="Shibin Saji" class="profile-img">
+            </div>
         </div>
     </header>
 
@@ -62,42 +62,52 @@
     </section>
 
     <section id="about" class="services-about">
-        <div class="services">
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon"><i class="fas fa-desktop"></i></div>
-                <h4>Website Development</h4>
+        <!-- New About Layout: Image Left, Content Right -->
+        <div class="about-container">
+            <div class="about-image-wrapper" data-aos="fade-right">
+                <div class="about-img-bg"></div>
+                <!-- Using profile source again or a different one if available. 
+                     Reference has a different image for About. Using same for now. -->
+                <img src="images/profile-source.png" alt="Shibin Saji" class="about-img">
             </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon"><i class="fas fa-mobile-alt"></i></div>
-                <h4>App Development</h4>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon"><i class="fas fa-cloud"></i></div>
-                <h4>Website Hosting</h4>
+
+            <div class="about-content" data-aos="fade-left">
+                <h3 class="about-title">I Am Modern <span class="highlight">Web Developer</span></h3>
+                <p class="about-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tellus
+                    est, finibus ut congue sed, faucibus ut dui. Sed congue nisl dolor, id dapibus leo elementum
+                    posuere. Ut aliquam metus quis laoreet elementum. In hac habitasse platea dictumst.</p>
+
+                <div class="personal-info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Name</span>
+                        <span class="info-value">: Shibin Saji</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Age</span>
+                        <span class="info-value">: 24</span> <!-- Placeholder -->
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Address</span>
+                        <span class="info-value">: Kerala, India</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Phone Number</span>
+                        <span class="info-value">: +91 98765 43210</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Email</span>
+                        <span class="info-value">: shibinsaji@example.com</span>
+                    </div>
+                </div>
+
+                <a href="download/resume.pdf" class="btn btn-primary download-btn">Download Cv</a>
             </div>
         </div>
 
-        <div class="about-me" data-aos="fade-left">
-            <h3>About me</h3>
-            <p>I started my software journey from photography. Through that, I learned to love the process of creating
-                from scratch. Since then, this has led me to software development as it fulfills my love for learning
-                and building things.</p>
-
-            <div class="stats">
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                    <span class="number">120 +</span>
-                    <span class="label">Completed Projects</span>
-                </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                    <span class="number">95 %</span>
-                    <span class="label">Client satisfaction</span>
-                </div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                    <span class="number">10 +</span>
-                    <span class="label">Years of experience</span>
-                </div>
-            </div>
-        </div>
+        <!-- Moved Services below About or keep separate if needed. 
+             Reference image implies About is distinct. 
+             I will keep Services as a separate block below if needed, or remove if not in reference.
+             For now, creating a clean About section as requested. -->
     </section>
 
     <section id="projects" class="projects-section">
@@ -222,6 +232,8 @@
 
     <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
