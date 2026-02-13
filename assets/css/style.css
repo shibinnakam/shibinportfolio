@@ -308,10 +308,7 @@ ul {
 .about-image-wrapper {
     flex: 1;
     position: relative;
-    padding: 20px;
-    background-color: #fff;
-    /* White frame effect */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    /* Removed frame effect styles */
 }
 
 .about-img {
