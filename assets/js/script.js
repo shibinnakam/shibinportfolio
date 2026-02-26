@@ -178,6 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(data).toString(),
             }).then(response => {
+                console.log("Form submission response:", response);
                 if (response.ok) {
                     status.innerHTML = "✅ Message sent successfully!";
                     status.style.display = 'block';
