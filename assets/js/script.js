@@ -158,53 +158,71 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // Contact Form Submission
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+    // ====== CONTACT FORM ======
+    const form = document.getElementById('contactForm');
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const form = e.target;
-            const data = new FormData(form);
-            const status = document.getElementById('confirmation-message');
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerText;
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
 
-            submitBtn.innerText = 'Sending...';
-            submitBtn.disabled = true;
+            const name = nameInput ? nameInput.value.trim() : "";
+            const email = emailInput ? emailInput.value.trim() : "";
+            const message = messageInput ? messageInput.value.trim() : "";
+
+            if (!name || !email || !message) {
+                showFormMessage('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            // Netlify Form Submission
+            const btn = form.querySelector('.btn-submit');
+            const originalBtnText = btn.innerHTML;
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            const formData = new FormData(form);
 
             fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(data).toString(),
-            }).then(response => {
-                console.log("Form submission response:", response);
-                if (response.ok) {
-                    status.innerHTML = "✅ Message sent successfully!";
-                    status.style.display = 'block';
-                    status.style.color = '#4ade80'; // Success green
-                    form.reset();
-                    setTimeout(() => {
-                        window.location.href = "success.html"; // Changed to success.html as it exists
-                    }, 2000);
-                } else {
-                    status.innerHTML = "Oops! There was a problem submitting your form";
-                    status.style.display = 'block';
-                    status.style.color = '#ef4444'; // Error red
-                }
-            }).catch(error => {
-                status.innerHTML = "Oops! There was a problem submitting your form";
-                status.style.display = 'block';
-                status.style.color = '#ef4444'; // Error red
-            }).finally(() => {
-                submitBtn.innerText = originalBtnText;
-                submitBtn.disabled = false;
-
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    if (status) status.style.display = 'none';
-                }, 5000);
-            });
+                body: new URLSearchParams(formData).toString(),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        showFormMessage('Thank you! Your message has been sent successfully.', 'success');
+                        form.reset();
+                    } else {
+                        showFormMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+                    }
+                })
+                .catch((error) => {
+                    showFormMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+                    console.error(error);
+                })
+                .finally(() => {
+                    if (btn) {
+                        btn.innerHTML = originalBtnText;
+                        btn.disabled = false;
+                    }
+                });
         });
+    }
+
+    function showFormMessage(msg, type) {
+        const confirmationMessage = document.getElementById('confirmation-message');
+        if (confirmationMessage) {
+            confirmationMessage.textContent = msg;
+            confirmationMessage.style.display = 'block';
+            confirmationMessage.style.color = type === 'success' ? '#4ade80' : '#ef4444';
+
+            setTimeout(() => {
+                confirmationMessage.style.display = 'none';
+            }, 5000);
+        }
     }
 });
