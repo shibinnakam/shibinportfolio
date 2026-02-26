@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     // Contact Form Submission
+    /* 
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -213,4 +214,5 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    */
 });
