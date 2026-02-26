@@ -159,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     // Contact Form Submission
-    /* 
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -186,18 +185,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     status.style.color = '#4ade80'; // Success green
                     form.reset();
                     setTimeout(() => {
-                        window.location.href = "index.html#home";
+                        window.location.href = "success.html"; // Changed to success.html as it exists
                     }, 2000);
                 } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-                        } else {
-                            status.innerHTML = "Oops! There was a problem submitting your form";
-                        }
-                        status.style.display = 'block';
-                        status.style.color = '#ef4444'; // Error red
-                    })
+                    status.innerHTML = "Oops! There was a problem submitting your form";
+                    status.style.display = 'block';
+                    status.style.color = '#ef4444'; // Error red
                 }
             }).catch(error => {
                 status.innerHTML = "Oops! There was a problem submitting your form";
@@ -209,10 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Hide message after 5 seconds
                 setTimeout(() => {
-                    status.style.display = 'none';
+                    if (status) status.style.display = 'none';
                 }, 5000);
             });
         });
     }
-    */
 });
