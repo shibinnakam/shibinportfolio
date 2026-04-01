@@ -50,6 +50,7 @@ body {
     cursor: pointer;
     display: inline-block;
     border: none;
+    text-decoration: none;
 }
 
 .btn-nav {
@@ -81,6 +82,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
 }
 
 .link-btn i {
