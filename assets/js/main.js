@@ -88,27 +88,37 @@ document.querySelectorAll(".nav-link").forEach(link => {
     });
 });
 
-// Active Link Highlighting on Scroll
-const sections = document.querySelectorAll("section[id]");
-const navActiveLinks = document.querySelectorAll(".nav-link");
+// Active Link Highlighting using IntersectionObserver
+const navLinksItems = document.querySelectorAll(".nav-link");
+const observerOptions = {
+    root: null,
+    rootMargin: "-20% 0px -70% 0px", // Adjust these values to tune when a link becomes active
+    threshold: 0
+};
 
-window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 150) {
-            current = section.getAttribute("id");
+const observerCallback = (entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            navLinksItems.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${id}`) {
+                    link.classList.add("active");
+                }
+            });
         }
     });
+};
 
-    navActiveLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-            link.classList.add("active");
-        }
-    });
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+// Only observe sections that have a corresponding link in the navbar
+const trackedSectionIds = Array.from(navLinksItems).map(link => link.getAttribute("href").substring(1));
+trackedSectionIds.forEach(id => {
+    const section = document.getElementById(id);
+    if (section) observer.observe(section);
 });
+
 
 
 
