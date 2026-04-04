@@ -6,7 +6,7 @@
     --accent-gradient: linear-gradient(90deg, #333333, #111111);
     --text-white: #ffffff;
     --text-gray: #9ca3af;
-    --nav-height: 80px;
+    --nav-height: 90px;
     --top-bar-height: 40px;
 }
 
@@ -57,9 +57,10 @@ body {
 .btn-nav {
     background-color: transparent;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    font-size: 0.75rem;
-    padding: 10px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 0.7rem;
+    padding: 7px 20px;
+    margin-top: 2px; /* slight nudge down for 'space from top' feel */
 }
 
 .btn-nav:hover { background-color: white; color: black; border-color: white; }
@@ -174,10 +175,10 @@ body {
 .nav-links a {
     text-decoration: none;
     color: #a3a3a3;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.8px;
     transition: 0.3s;
 }
 
