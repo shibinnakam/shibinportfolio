@@ -61,16 +61,33 @@ function toggleFlip(card) {
     card.classList.toggle("flipped");
 }
 
+// Navbar Scroll Effect
+const navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+
 // Mobile Menu Toggle
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
 if (hamburger) {
     hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-        hamburger.classList.toggle("toggle");
+        navLinks.classList.toggle("mobile-open");
     });
 }
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("mobile-open");
+    });
+});
+
 
 // AJAX Contact Form Submission
 const contactForm = document.getElementById("contact-form");
