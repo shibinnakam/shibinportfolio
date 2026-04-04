@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize Typing Effect
     const typingData = [
-        { id: "hero-intro", text: "Full Stack & AI Developer Aspirant", speed: 50 },
-        { id: "hero-title", text: "SHIBIN SAJI", speed: 100 }
+        { id: "hero-role", text: "MERN Stack | AI | IoT", speed: 100 }
     ];
 
     startTypingSequence(typingData);
