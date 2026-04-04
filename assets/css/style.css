@@ -736,21 +736,137 @@ section { padding: 100px 0; }
     .hero-title { font-size: 2.8rem; }
 }
 
-/* Timeline Styles for Education */
+/* Education & Experience Section */
+.edu-exp-section {
+    padding: 100px 0;
+    background-color: var(--bg-color);
+}
+
+.edu-exp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    text-align: left;
+}
+
+.column-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.column-title i {
+    color: white;
+    font-size: 1rem;
+}
+
+.vertical-timeline {
+    position: relative;
+    padding-left: 25px;
+}
+
+.vertical-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #2a2a2a;
+}
+
+.timeline-box {
+    position: relative;
+    background-color: #050505;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+.timeline-box::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 22px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #444;
+    background-color: var(--bg-color);
+}
+
+.timeline-box:first-child::before {
+    background-color: white;
+    border-color: white;
+}
+
+.timeline-box:hover {
+    border-color: #333;
+}
+
+.time-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #a3a3a3;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    background-color: #111;
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+
+.timeline-box h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.white-badge {
+    background-color: #222;
+    color: #a3a3a3;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.inst-name {
+    font-size: 0.85rem;
+    color: #5b8fff;
+    margin-bottom: 5px;
+}
+
+.inst-loc {
+    font-size: 0.85rem;
+    color: #5b8fff;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .edu-exp-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* Legacy Timeline (kept for reference) */
 .timeline {
     position: relative;
     max-width: 800px;
     margin: 40px auto;
-}
-
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background-color: var(--accent-purple);
-    top: 0;
-    bottom: 0;
-    left: 20px;
 }
 
 .timeline-item {
@@ -759,19 +875,6 @@ section { padding: 100px 0; }
     background-color: inherit;
     width: 100%;
     margin-bottom: 30px;
-}
-
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    left: 13px;
-    background-color: var(--bg-color);
-    border: 2px solid var(--accent-purple);
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
 }
 
 .timeline-content {
