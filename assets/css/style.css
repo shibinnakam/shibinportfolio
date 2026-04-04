@@ -388,12 +388,14 @@ section { padding: 100px 0; }
 }
 
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: white;
 }
 
 .section-title span { color: var(--accent-blue); }
+
 
 .section-desc {
     color: var(--text-gray);
@@ -404,9 +406,11 @@ section { padding: 100px 0; }
 /* Skills & Technologies */
 .section-desc {
     color: var(--text-gray);
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     margin-bottom: 40px;
+    line-height: 1.6;
 }
+
 .diamond-divider {
     display: flex;
     align-items: center;
@@ -437,8 +441,9 @@ section { padding: 100px 0; }
 .skill-card-new {
     background-color: #050505;
     border: 1px solid #1a1a1a;
-    padding: 40px 20px;
+    padding: 30px 15px;
     border-radius: 2px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -564,19 +569,20 @@ section { padding: 100px 0; }
 .badge.featured { background-color: white; color: black; }
 .badge.live { background-color: #333; color: white; }
 .portfolio-info-area {
-    padding: 30px;
+    padding: 25px;
 }
 .portfolio-info-area h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
+    font-size: 1.15rem;
+    margin-bottom: 12px;
     color: white;
 }
 .portfolio-info-area p {
     color: #a3a3a3;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.6;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
+
 .portfolio-tags {
     display: flex;
     flex-wrap: wrap;
@@ -884,54 +890,39 @@ section { padding: 100px 0; }
     background-color: #050505;
     border: 1px solid #1a1a1a;
     border-radius: 2px;
-    padding: 25px;
+    padding: 30px;
     margin-bottom: 20px;
-    transition: border-color 0.3s;
-}
-
-.timeline-box::before {
-    content: '';
-    position: absolute;
-    left: -22px;
-    top: 22px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid #444;
-    background-color: var(--bg-color);
-}
-
-.timeline-box:first-child::before {
-    background-color: white;
-    border-color: white;
+    transition: all 0.3s ease;
 }
 
 .timeline-box:hover {
     border-color: #333;
+    transform: translateY(-5px);
 }
 
 .time-tag {
     display: inline-block;
     font-size: 0.75rem;
-    color: #a3a3a3;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-    background-color: #111;
-    padding: 3px 10px;
-    border-radius: 4px;
+    font-weight: 700;
+    color: #000;
+    background-color: #fff;
+    padding: 3px 12px;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .timeline-box h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: white;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-wrap: wrap;
 }
+
 
 .white-badge {
     background-color: #222;
@@ -1278,10 +1269,10 @@ section { padding: 100px 0; }
 }
 
 .contact-item i {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #fff;
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
     background: #111;
     display: flex;
     align-items: center;
@@ -1291,14 +1282,14 @@ section { padding: 100px 0; }
 }
 
 .item-text h4 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #fff;
     margin-bottom: 5px;
 }
 
 .item-text p {
     color: #a3a3a3;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .contact-form {
@@ -1306,6 +1297,7 @@ section { padding: 100px 0; }
     flex-direction: column;
     gap: 20px;
 }
+
 
 .form-row {
     display: grid;
