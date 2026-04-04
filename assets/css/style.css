@@ -2,7 +2,8 @@
     --bg-color: #000000;
     --card-bg: #111112; 
     --accent-blue: #ffffff;
-    --accent-purple: #aaaaaa;
+    --accent-purple: #8b5cf6;
+
     --accent-gradient: linear-gradient(90deg, #333333, #111111);
     --text-white: #ffffff;
     --text-gray: #9ca3af;
@@ -245,24 +246,25 @@ body {
 
 .hero-hello {
     color: var(--text-white);
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+    opacity: 0.8;
 }
 
 .hero-role {
     color: var(--accent-purple);
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.1rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     min-height: 1.5em; /* Prevent layout shift */
-    font-family: monospace;
-    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
 }
 
 .hero-title {
-    font-size: 4.8rem;
+    font-size: 3.8rem;
     font-weight: 800;
     margin-bottom: 20px;
     color: var(--text-white);
@@ -270,7 +272,6 @@ body {
     line-height: 1.1;
 }
 
-/* Typing Cursor Effect */
 .hero-role.is-typing::after {
     content: '|';
     margin-left: 5px;
@@ -284,8 +285,8 @@ body {
 }
 
 .hero-description {
-    color: var(--text-gray);
-    font-size: 1.05rem;
+    color: #a3a3a3;
+    font-size: 0.95rem;
     max-width: 550px;
     margin-bottom: 40px;
     line-height: 1.8;
@@ -302,15 +303,18 @@ body {
 
 .hero-image-area {
     position: relative;
+    max-width: 450px;
 }
 
 .hero-img {
-    max-width: 480px;
+    width: 100%;
     position: relative;
     z-index: 2;
-    filter: grayscale(1) contrast(1.1) drop-shadow(0 0 40px rgba(0,0,0,0.9));
+    filter: grayscale(1) contrast(1.1);
     transition: 0.5s;
+    border-radius: 4px;
 }
+
 
 .hero-img:hover {
     filter: grayscale(0.8) contrast(1.1);
