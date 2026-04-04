@@ -1223,4 +1223,46 @@ section { padding: 100px 0; }
     }
 }
 
+/* Form Success State */
+.form-success-container {
+    padding: 60px 40px;
+    background-color: #050505;
+    border: 1px solid #1a1a1a;
+    border-radius: 2px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.success-icon {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.form-success-container h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.form-success-container p {
+    color: #a3a3a3;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.auto-back {
+    font-size: 0.85rem;
+    color: #555;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
 
