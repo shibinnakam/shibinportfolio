@@ -20,41 +20,71 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Initialize Typing Effect
-    const typingData = [
-        { id: "hero-role", text: "MERN Stack | AI | IoT", speed: 100 }
+    const roles = [
+        "MERN Stack Developer",
+        "AI Enthusiast",
+        "Full Stack Developer",
+        "IoT Systems Developer",
+        "MCA Graduate"
     ];
 
-    startTypingSequence(typingData);
+    startTypingLoop("hero-role", roles);
 });
 
-async function startTypingSequence(data) {
-    for (const item of data) {
-        await typeWriter(item.id, item.text, item.speed);
+async function startTypingLoop(elementId, roles) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    let roleIndex = 0;
+    while (true) {
+        let currentRole = roles[roleIndex];
+        
+        // Type the role
+        await typeText(element, currentRole);
+        await new Promise(r => setTimeout(r, 2000)); // Pause at end
+        
+        // Erase the role
+        await eraseText(element);
+        await new Promise(r => setTimeout(r, 500)); // Pause after erase
+        
+        roleIndex = (roleIndex + 1) % roles.length;
     }
 }
 
-function typeWriter(elementId, text, speed) {
+function typeText(element, text) {
     return new Promise((resolve) => {
-        const element = document.getElementById(elementId);
-        if (!element) return resolve();
-        
         element.innerHTML = "";
-        element.classList.add("is-typing"); // Show cursor
+        element.classList.add("is-typing");
         let i = 0;
-        
-        function type() {
+        const interval = setInterval(() => {
             if (i < text.length) {
                 element.innerHTML += text.charAt(i);
                 i++;
-                setTimeout(type, speed);
             } else {
-                element.classList.remove("is-typing"); // Hide cursor after done
+                clearInterval(interval);
                 resolve();
             }
-        }
-        type();
+        }, 100);
     });
 }
+
+function eraseText(element) {
+    return new Promise((resolve) => {
+        const text = element.innerHTML;
+        let i = text.length;
+        const interval = setInterval(() => {
+            if (i > 0) {
+                element.innerHTML = text.substring(0, i - 1);
+                i--;
+            } else {
+                element.classList.remove("is-typing");
+                clearInterval(interval);
+                resolve();
+            }
+        }, 500 / text.length); // Speed up erase relative to word length
+    });
+}
+
 
 // Flip card toggle handler (backup for inline onclick)
 function toggleFlip(card) {
