@@ -1,9 +1,9 @@
 :root {
     --bg-color: #000000;
     --card-bg: #111112; 
-    --accent-blue: #2b56ff;
-    --accent-purple: #9b51ff;
-    --accent-gradient: linear-gradient(90deg, #2b56ff, #9b51ff);
+    --accent-blue: #ffffff;
+    --accent-purple: #aaaaaa;
+    --accent-gradient: linear-gradient(90deg, #333333, #111111);
     --text-white: #ffffff;
     --text-gray: #9ca3af;
     --nav-height: 80px;
@@ -80,8 +80,8 @@ body {
 }
 
 .btn-purple:hover { 
-    background-color: #8a3ffc; 
-    box-shadow: 0 0 20px rgba(155, 81, 255, 0.4);
+    background-color: #aaaaaa; 
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .btn-white {
@@ -845,13 +845,13 @@ section { padding: 100px 0; }
 
 .inst-name {
     font-size: 0.85rem;
-    color: #5b8fff;
+    color: #cccccc;
     margin-bottom: 5px;
 }
 
 .inst-loc {
     font-size: 0.85rem;
-    color: #5b8fff;
+    color: #cccccc;
     line-height: 1.6;
 }
 
@@ -914,7 +914,7 @@ section { padding: 100px 0; }
     background: linear-gradient(135deg, #121213 0%, #1a1a1b 100%);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid rgba(155, 81, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     text-align: left;
     margin-top: 30px;
 }
@@ -995,8 +995,8 @@ section { padding: 100px 0; }
     position: absolute;
     top: 15px;
     right: 15px;
-    background: rgba(43, 86, 255, 0.8);
-    color: white;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
     font-size: 0.75rem;
     padding: 4px 10px;
     border-radius: 20px;
